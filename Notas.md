@@ -83,3 +83,57 @@ rm -rf node_modules/
 
 Si se instalo con rimraf, se puede eliminar la carpeta con
 sudo npm install -g rimfar
+
+otra forma de actualizar:
+npm install
+
+para ver los cambios que pueden afectar nuestro proyecto
+npm audit
+npm audit --json para crear un documento.json 
+
+para actualizar el paquete y las dependecnias al nivel 2
+npm update nombredelpaquete --depth 2
+
+reparar todos los errores y vulneravilidades
+npm audit fix
+
+Crear un paquete para npm:
+pwd
+mkdir random-messages
+cd random-messages/
+git init
+npm init //establecer la config del proyecto
+
+en la carpeta src va el arvicho index.js:
+
+const messages = ["Oscar", "Ana", "Nikolai", "Diego", "Laura"];
+
+const randomMsg = () => {
+  const message = messages[Math.floor(Math.random() * mesagges.length)];
+  console.log(mesagge);
+};
+
+module.exports = { randomMsg };
+
+lugo en la carpeta bin v a el archivo global.js
+
+#!/usr/bin/env node
+let random = require('../src/index.js');
+
+random.randomMsg();
+
+sudo npm link //Que lo instale de forma global y lo añada a la config del equipo
+
+tambien se peude instalar desde el pad
+sudo npm install -g ruta
+
+para publicar en npm
+npm adduser //me logueo con los datos de mi cuenta
+
+npm publish //publico mi paquete
+En elr eadme.md ponemos los comandos que podemos utilizar
+
+npm version patch//se agrega el tipo de cambio, grande mimior o patch
+sudo npm install -g npm //Actualizar npm
+npm -v //Para ver la version
+npm publish //Se publica
